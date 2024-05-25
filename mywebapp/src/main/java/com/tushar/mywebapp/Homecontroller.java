@@ -12,11 +12,8 @@ public class Homecontroller {
 
     @RequestMapping("home")
     // @ResponseBody
-    public String home(HttpServletRequest req )
+    public String home(String name , HttpSession session )
     {
-        HttpSession session = req.getSession();
-        String name = req.getParameter("name");
-
         session.setAttribute("name", name);
         System.out.println("home controller");
         return "home";
