@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	welcome ${name}
+	welcome ${obj.aname}  , ${obj.aid} , ${obj.lang}
 </body>
 </html>
