@@ -19,6 +19,16 @@
             "projectName": "mywebapp",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringbootjpaApplication<springbootjpa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.springbootjpa.SpringbootjpaApplication",
+            "projectName": "springbootjpa",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
