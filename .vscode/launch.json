@@ -29,6 +29,16 @@
             "projectName": "springbootjpa",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringdatarestApplication<springdatarest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.springdatarest.SpringdatarestApplication",
+            "projectName": "springdatarest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
