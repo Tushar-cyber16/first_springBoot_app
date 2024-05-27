@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.springbootjpa.dao.AlienRepo;
 import com.example.springbootjpa.model.Alien;
 import com.example.springbootjpa.service.AlienService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.service.annotation.DeleteExchange;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -32,6 +35,12 @@ public class Aliencontroller {
     @RequestMapping("/")
     public String home() {
         return "home.jsp";
+    }
+
+    @DeleteMapping(path="/alien/{aid}" )
+    public String deletealien(@PathVariable("aid") int aid)
+    {
+        return service.deletealien(aid);
     }
 
     @PostMapping("/addAlien")

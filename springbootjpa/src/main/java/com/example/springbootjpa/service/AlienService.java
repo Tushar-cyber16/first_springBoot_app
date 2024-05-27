@@ -30,6 +30,14 @@ public class AlienService {
         return repo.findAll();
         
     }
+    @SuppressWarnings("deprecation")
+    public String deletealien(int aid)
+    {
+      
+       repo.delete(repo.getOne(aid));
+       return "deleted";
+       
+    }
     public List<Alien> findByaname(String aname)
     {
         List<Alien> aliens = new ArrayList<Alien>();
