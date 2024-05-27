@@ -1,5 +1,8 @@
 package com.example.springbootjpa.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,12 +16,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 
 
 
-@Controller
+// @Controller
+@RestController // now no need to mention response body everywhere for rest app
 public class Aliencontroller {
 
     @Autowired
@@ -30,27 +35,29 @@ public class Aliencontroller {
     }
 
     @PostMapping("/addAlien")
-    public String addAlien(Alien alien) {
+    public Alien addAlien(@RequestBody Alien alien) {
 
         service.saveorupdate(alien);
-        return "home.jsp";
+        return alien;
     }
 
     @GetMapping("/getAlien")
-    public ModelAndView getAlien() {
-        ModelAndView mv = new ModelAndView();
+    public List<Alien> getAlien() {
+        // ModelAndView mv = new ModelAndView();
         
-        System.out.println(service.findByaname("TUSHAR"));
-        mv.addObject("obj", service.getAlien());
-        mv.setViewName("allAlien.jsp");
-        return mv;
+        // System.out.println(service.findByaname("TUSHAR"));
+        // mv.addObject("obj", service.getAlien());
+        // mv.setViewName("allAlien.jsp");
+        // return mv;
         // System.out.println(service.getAlien());
         // return "home.jsp";
+
+        return service.getAlien();
     }
 
     @GetMapping("/alien/{aid}")
-    @ResponseBody
-    public String alienbyid(@PathVariable("aid") int aid) {
+    // @ResponseBody
+    public Optional<Alien> alienbyid(@PathVariable("aid") int aid) {
         return service.getalienbyid(aid);
     }
     
