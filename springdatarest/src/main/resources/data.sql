@@ -1,0 +1,5 @@
+
+INSERT INTO Alien VALUES(1,'TUSHAR');
+INSERT INTO Alien VALUES(2,'qwerty');
+INSERT INTO Alien VALUES(3,'asdfgh');
+INSERT INTO Alien VALUES(4,'TUzxcvbnSHAR');
